@@ -7,6 +7,9 @@ const Content = () => {
     return name[int]
 
  }
+ const Handelclick = (name) => {
+      console.log(`Hello ${name}` );
+ } 
 
 
 
@@ -14,6 +17,7 @@ const Content = () => {
 
    <main>
         <p>{Handel()} Daveram</p>
+        <button onClick={() => Handelclick('Daveram')}>Click Me </button>
    </main>     
 )
 }
