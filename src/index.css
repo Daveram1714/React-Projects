@@ -9,10 +9,10 @@ html {
 }
 
 body {
-  display: flex;
-  flex-direction: column;
   min-height: 100vh;
-  font-family: 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -20,9 +20,9 @@ body {
 .App {
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Ensures header and footer are spaced apart */
+  justify-content: center;
   align-items: center;
-  flex-grow: 1; /* Allows .App to take up remaining space */
+  height: 100vh; 
   width: 100%; 
   max-width: 500px;
   border: 1px solid mediumblue;
@@ -43,7 +43,7 @@ main {
   width: 100%;
   display: flex;
   flex-direction: column;
-  flex-grow: 1; /* Allows main to take up remaining space */
+  flex-grow: 1;
   justify-content: center;
   align-items: center;
   overflow-y: auto;
@@ -55,6 +55,5 @@ footer {
   background-color: mediumblue;
   color: aliceblue;
   display: grid;
-  justify-content: baseline;
   place-content: center;
 }
