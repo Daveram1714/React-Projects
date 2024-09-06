@@ -1,23 +1,24 @@
 import React from 'react'
+import { useState } from 'react';
+
 
 const Content = () => {
- function Handel(){
-    const name = ["hii","hello","how are you"];
-    const int = Math.floor(Math.random()*3);
-    return name[int]
 
- }
- const Handelclick = (name) => {
-      console.log(`Hello ${name}` );
- } 
+     const[name,setName] = useState("Increase");
+        function HandelNamechange(){
+          const name = ["Earn","Grow","Give"];
+          const int = Math.floor(Math.random()*3);
+          setName (name[int])
+     }
 
 
 
   return ( 
 
    <main>
-        <p>{Handel()} Daveram</p>
-        <button onClick={() => Handelclick('Daveram')}>Click Me </button>
+        <p>  Let's {name} Money</p>
+        <button onClick={HandelNamechange}> Click Me </button>
+        
    </main>     
 )
 }
