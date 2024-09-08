@@ -8,7 +8,7 @@ const Content = () => {
      [
           {
                id:1,
-               checked:true,
+               checked:false,
                item:"Learningreact"
           },
           {
@@ -29,12 +29,11 @@ const Content = () => {
      ]
    );
 
-   const Handelcheck = (id) => {
-          const listitems = items.map((item) => 
-          item.id ===id? {...item,checked : !item.checked}: item
-          )     
-          Setitems(listitems)
-
+   const Handelcheck = (id) =>{
+     const listitems = items.map((item) =>
+     item.id===id ? {...item , checked : !item.checked} :item
+)
+     Setitems(listitems)
    }
 
 
