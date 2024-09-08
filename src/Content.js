@@ -37,6 +37,11 @@ const Content = () => {
 
    }
 
+   const Handeldelete =  (id) =>{
+     const listitems = items.filter((item) =>
+          item.id !==id)
+          Setitems(listitems)
+   }
 
   return ( 
 
@@ -50,11 +55,12 @@ const Content = () => {
           checked ={item.checked}
           />
                <label>{item.item}</label>
-               <><FaTrashCan 
+               <FaTrashCan 
                role='button'
                tabIndex={0}
+                onClick={() => Handeldelete(item.id)}
                />
-               </>
+               
           </li>
   
           )}
