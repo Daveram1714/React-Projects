@@ -31,8 +31,7 @@ const Content = () => {
 
    const Handelcheck = (id) =>{
      const listitems = items.map((item) =>
-     item.id===id ? {...item , checked : !item.checked} :item
-)
+     item.id===id ? {...item , checked : !item.checked} :item)
      Setitems(listitems)
    }
 
