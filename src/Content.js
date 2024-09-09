@@ -16,8 +16,11 @@ const Content = ({items,HandelCheck,HandelDelete}) => {
           type='checkbox'
           onChange={() => HandelCheck(item.id) }
           checked ={item.checked}
+               style={(item.checked)? {textDecoration:"line-through"} : null}
           />
-               <label>{item.item}</label>
+               <label
+               
+               >{item.item}</label>
                <FaTrashCan 
                role='button'
                tabIndex={0}
