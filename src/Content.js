@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { FaTrashCan } from "react-icons/fa6";
 
 
+<<<<<<< Updated upstream
 const Content = () => {
    const [items,Setitems] = useState(
      [
@@ -36,6 +37,9 @@ const Content = () => {
           Setitems(listitems)
 
    }
+=======
+const Content = ({items,HandelCheck,HandelDelete}) => {
+>>>>>>> Stashed changes
 
    const Handeldelete =  (id) =>{
      const listitems = items.filter((item) =>
