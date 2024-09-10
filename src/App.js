@@ -60,7 +60,9 @@ const HandelDelete =  (id) =>{
       HandelDelete  =  {HandelDelete}
       
       />
-      <Footer />
+      <Footer
+      length = {items.length}
+      />
       
     </div>
   );

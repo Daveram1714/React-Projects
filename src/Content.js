@@ -1,6 +1,5 @@
 import React from 'react'
-import { FaTrashCan } from "react-icons/fa6";
-
+import Itemslist from './Itemslist';
 
 const Content = ({items,HandelCheck,HandelDelete}) => {
 
@@ -9,31 +8,18 @@ const Content = ({items,HandelCheck,HandelDelete}) => {
  return ( 
 
    <main>
-      <ul>
-          {items.map((item) => 
-          <li className="item" key={item.id}>
-         <input  
-          type='checkbox'
-          onChange={() => HandelCheck(item.id) }
-          checked ={item.checked}
-               style={(item.checked)? {textDecoration:"line-through"} : null}
-          />
-               <label
-               
-               >{item.item}</label>
-               <FaTrashCan 
-               role='button'
-               tabIndex={0}
-                onClick={() => HandelDelete(item.id)}
+      {(items.length)?(
+      <Itemslist 
+      items = {items}
+      HandelCheck = {HandelCheck}
+      HandelDelete  =  {HandelDelete}
                />
-               
-          </li>
-  
-          )}
-      </ul>
+         ): (
+            <p>No items</p>
+         
+         )}
    </main>     
 )
+
 }
-
-
 export default Content
