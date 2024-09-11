@@ -38,23 +38,45 @@ const [items,Setitems] = useState(
   ]
 );
 
+     const [addItem,SetAddItems] = useState('')
+
+     const newItem = (item) => {
+          const id = items.length ? items[items.length - 1].id + 1 : 1;
+          const newItems = [...items, { id, checked: false, item }];
+          Setitems(newItems);
+          localStorage.setItem("DO-TO list", JSON.stringify(newItems));
+        }
+
 const HandelCheck = (id) =>{
   const listitems = items.map((item) =>
   item.id===id ? {...item , checked : !item.checked} :item)
   Setitems(listitems)
+  localStorage.setItem("To-do list",JSON.stringify(listitems))
 }
 const HandelDelete =  (id) =>{
   const listitems = items.filter((item) =>
        item.id !==id)
        Setitems(listitems)
+     localStorage.setItem("To-do list",JSON.stringify(listitems))
 }
 
+const HandelSubmit = (e) =>{
+     e.preventDefault()     
+     if(!addItem) return ;
+     console.log(addItem)
+     newItem(addItem)
+     SetAddItems('')          
+}
 
 
   return (
    <div className="App">
       <Header />
-      <Additem />
+      <Additem 
+      addItem = {addItem}
+      SetAddItems = {SetAddItems}
+      HandelSubmit ={HandelSubmit}
+      />
       <Content
       items = {items}
       HandelCheck = {HandelCheck}

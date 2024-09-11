@@ -4,7 +4,7 @@ import { FaPlus } from 'react-icons/fa6'
 const Additem = ({addItem,SetAddItems,HandelSubmit}) => {
   return (
     <form 
-    className=' addForm'>
+    className=' addForm' onSubmit={HandelSubmit}>
         <labe htmlfor ='addItem'></labe>
         <input
         autoFocus  
