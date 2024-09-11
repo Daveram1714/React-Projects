@@ -5,7 +5,7 @@ const Additem = () => {
   return (
     <form 
     className=' addForm'>
-        <labe htmlfor ='addItem'>Additem</labe>
+        <labe htmlfor ='addItem'></labe>
         <input
         autoFocus  
         type='text'
