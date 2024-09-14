@@ -1,13 +1,14 @@
-const express = require("express") 
-const todo = express()
-const bodyParser  = require("body-parser")
+import express from "express";
 
-todo.use(bodyParser.json())
+const app  = express();
+const PORT = 6969;
 
+app.get("/" , (req,res) => {
+    res.json({msg: "Hello"})
+});
 
+app.listen(PORT, () => {
+    console.log(`Server is running on port http://localhost:${PORT}`);
+});
 
-
-todo.listen(5000, function(){
-    console.log("Connection Establihed .....");
-    }  )
-
+       
