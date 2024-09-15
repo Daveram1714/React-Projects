@@ -3,6 +3,7 @@ import Footer from "./Footer";
 import Header from "./Header";
 import { useState } from 'react';
 import Additem from "./Additem";
+import Search  from "./Search";
 function App() {
 
  /* function handelchanhe() {
@@ -37,6 +38,7 @@ const [items,Setitems] = useState(
        }
   ]
 );
+     const [search,SetSearch] = useState(' ')
 
      const [addItem,SetAddItems] = useState('')
 
@@ -77,8 +79,14 @@ const HandelSubmit = (e) =>{
       SetAddItems = {SetAddItems}
       HandelSubmit ={HandelSubmit}
       />
+      <Search 
+      Search = {search}
+      SetSearch = {SetSearch}
+      />
       <Content
-      items = {items}
+      items = {items.filter(
+          (item) => (item.item)
+      )}
       HandelCheck = {HandelCheck}
       HandelDelete  =  {HandelDelete}
       
