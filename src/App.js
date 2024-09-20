@@ -4,6 +4,7 @@ import Header from "./Header";
 import { useState } from 'react';
 import Additem from "./Additem";
 import Search  from "./Search";
+import axios from "axios";
 function App() {
 
  /* function handelchanhe() {
@@ -11,7 +12,7 @@ function App() {
   const int  = Math.floor(Math.random()*2);
   return name[int]
 }
-*/
+*/   
 
 
 const [items,Setitems] = useState(
@@ -50,6 +51,14 @@ const [items,Setitems] = useState(
         }
 
 const HandelCheck = (id) =>{
+
+     axios.post("http://localhost:6969/Create",{
+          id : items.id,
+          checked : items.true,
+          item:items.item
+
+     })
+
   const listitems = items.map((item) =>
   item.id===id ? {...item , checked : !item.checked} :item)
   Setitems(listitems)
